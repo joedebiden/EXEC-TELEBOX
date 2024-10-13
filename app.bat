@@ -6,14 +6,10 @@ setlocal EnableDelayedExpansion
 set "ESC="
 
 
-if not exist ".venv\Scripts\activate.bat" (
-    echo python virtual environment not found, creating it...
-    python -m venv .venv
-    call .venv\Scripts\activate
-    pip install -r requirements.txt
-) else (
-    call .venv\Scripts\activate
-)
+
+echo installing dependencies...
+pip install -r requirements.txt
+
 
 :start
 call :banner
